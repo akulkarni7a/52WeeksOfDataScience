@@ -29,11 +29,17 @@ scaler.fit(X)
 X_scaled = scaler.transform(X)
 
 
-def train_test_rmse(X, y):
-    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1)
-    linreg = LinearRegression()
-    linreg.fit(X_train, y_train)
-    y_pred = linreg.predict(X_test)
-    return np.sqrt(metrics.mean_squared_error(y_test, y_pred))
+X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, random_state=1)
+linreg = LinearRegression()
+linreg.fit(X_train, y_train)
+y_pred = linreg.predict(X_test)
+
+np.sqrt(metrics.mean_squared_error(y_test, y_pred))
+sns.distplot((y_test-y_pred),bins=50)
+
+coeffecients = pd.DataFrame(linreg.coef_,X.columns)
+coeffecients.columns = ['Coeffecient']
+coeffecients
 
 train_test_rmse(X_scaled, y)
+
