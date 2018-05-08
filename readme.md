@@ -1,4 +1,4 @@
-# 52 Weeks of Machine Learning
+# 52 Weeks of Data Science
 
 Every week for the next year, I'll post a Dataset and my key takeaways. If you're interested in joining, feel free to download this repository or message me
 
