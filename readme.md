@@ -12,4 +12,4 @@ Week 4: The Two Americas
 <br>
 Week 5: Predicting Titanic Survivors
 <br>
-
+Week 6: NFL Gunslingers: Jay Cutler, Brett Favre… Bruce Gradkowski?
