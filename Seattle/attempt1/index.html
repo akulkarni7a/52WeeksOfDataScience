@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8' />
+  <title>Seattle Crime</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet' />
+  <link href="./assets/css/style.css"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    #crimeFilter {
+      position: absolute;
+      z-index: 1012022;
+      top: 60px;
+      right: 10px;
+      width: 150px;
+    }
+  </style>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="crimeFilter">
+    <form action="">
+      <input type="radio" name="crime" value="all">All<br>
+      <input type="radio" name="crime" value="shoplifting" checked="checked">Shoplifting<br>
+      <input type="radio" name="crime" value="robbery">Robbery<br>
+      <input type="radio" name="crime" value="prostitution">Prostitution<br>
+      <input type="radio" name="crime" value="narcotics">Narcotics<br>
+      <input type="radio" name="crime" value="burglary">Burglary<br>
+      <input type="radio" name="crime" value="autotheft">Auto Theft<br>
+      <input type="radio" name="crime" value="homicide">Homicide<br>
+      <input type="radio" name="crime" value="assault">Assault<br>
+      <input type="radio" name="crime" value="arrest">Arrest<br>
+      <input type="radio" name="crime" value="carprowl">Car Prowl<br>
+
+    </form>
+  </div>
+
+  <div id='map'></div>
+  <script src="./assets/js/logic.js"></script>
+
+</body>
+
+</html>
