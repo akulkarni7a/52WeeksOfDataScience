@@ -7,10 +7,8 @@ Created on Sat May 12 09:01:38 2018
 """
 import pandas as pd
 import seaborn as sns
-from gmplot import gmplot
 
-
-df = pd.read_csv("/Users/anirudhkulkarni/Desktop/52WeeksOfDataScience/Week 7/Data/seattle.csv")
+df = pd.read_csv(r"C:\Users\AK\Desktop\52WeeksOfDataScience\Seattle\Data\seattle.csv")
 df.head()
 
 df['Event Clearance Date'] = pd.to_datetime(df['Event Clearance Date'],format='%m/%d/%Y %H:%M:%S %p')

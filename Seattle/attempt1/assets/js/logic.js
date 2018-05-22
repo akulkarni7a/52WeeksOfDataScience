@@ -42,13 +42,13 @@ map.on('load', function() {
     });
 
     map.addLayer({
-        'id': 'shoplifting',
+        'id': 'all',
         'type': 'circle',
         'source': {
             type: 'vector',
-            url: 'mapbox://askakdagr8.4hwzprpq'
+            url: 'mapbox://askakdagr8.9eh927tk'
         },
-        'source-layer': 'dfshop-7eo2uj',
+        'source-layer': 'output-3xxq3l',
         'paint': {
             // make circles larger as the user zooms from z12 to z22
             'circle-radius': {
@@ -62,343 +62,207 @@ map.on('load', function() {
         }
     });
 
-    map.addLayer({
-        'id': 'robbery',
-        'type': 'circle',
-        'source': {
-            type: 'vector',
-            url: 'mapbox://askakdagr8.527q90rp'
-        },
-        'source-layer': 'dfrob-5m6vcm',
-        'paint': {
-            // make circles larger as the user zooms from z12 to z22
-            'circle-radius': {
-                'base': 1.75,
-                'stops': [
-                    [12, 2],
-                    [22, 180]
-                ]
-            },
-            'circle-color': '#629dfc'
-        }
-    });
-
-    map.addLayer({
-        'id': 'prostitution',
-        'type': 'circle',
-        'source': {
-            type: 'vector',
-            url: 'mapbox://askakdagr8.c3exxor3'
-        },
-        'source-layer': 'dfpros-1g5sm4',
-        'paint': {
-            // make circles larger as the user zooms from z12 to z22
-            'circle-radius': {
-                'base': 1.75,
-                'stops': [
-                    [12, 2],
-                    [22, 180]
-                ]
-            },
-            'circle-color': '#a761fc'
-        }
-    });
-
-    map.addLayer({
-        'id': 'narcotics',
-        'type': 'circle',
-        'source': {
-            type: 'vector',
-            url: 'mapbox://askakdagr8.2es81wfn'
-        },
-        'source-layer': 'dfnar-cz7c77',
-        'paint': {
-            // make circles larger as the user zooms from z12 to z22
-            'circle-radius': {
-                'base': 1.75,
-                'stops': [
-                    [12, 2],
-                    [22, 180]
-                ]
-            },
-            'circle-color': '#f1ff5e'
-        }
-    });
-
-    map.addLayer({
-        'id': 'burglary',
-        'type': 'circle',
-        'source': {
-            type: 'vector',
-            url: 'mapbox://askakdagr8.6sq5673u'
-        },
-        'source-layer': 'dfburg-2mp4oe',
-        'paint': {
-            // make circles larger as the user zooms from z12 to z22
-            'circle-radius': {
-                'base': 1.75,
-                'stops': [
-                    [12, 2],
-                    [22, 180]
-                ]
-            },
-            'circle-color': '#ff93e7'
-        }
-    });
-
-    map.addLayer({
-        'id': 'autotheft',
-        'type': 'circle',
-        'source': {
-            type: 'vector',
-            url: 'mapbox://askakdagr8.8txxjotz'
-        },
-        'source-layer': 'dfauto-75ozrd',
-        'paint': {
-            // make circles larger as the user zooms from z12 to z22
-            'circle-radius': {
-                'base': 1.75,
-                'stops': [
-                    [12, 2],
-                    [22, 180]
-                ]
-            },
-            'circle-color': '#ff0f0f'
-        }
-    });
-
-    map.addLayer({
-        'id': 'homicide',
-        'type': 'circle',
-        'source': {
-            type: 'vector',
-            url: 'mapbox://askakdagr8.6ez8zen8'
-        },
-        'source-layer': 'dfhom-4acjnw',
-        'paint': {
-            // make circles larger as the user zooms from z12 to z22
-            'circle-radius': {
-                'base': 1.75,
-                'stops': [
-                    [12, 2],
-                    [22, 180]
-                ]
-            },
-            'circle-color': '#7c7c7c'
-        }
-    });
-
-    map.addLayer({
-        'id': 'assault',
-        'type': 'circle',
-        'source': {
-            type: 'vector',
-            url: 'mapbox://askakdagr8.doaizs7e'
-        },
-        'source-layer': 'dfass-al518o',
-        'paint': {
-            // make circles larger as the user zooms from z12 to z22
-            'circle-radius': {
-                'base': 1.75,
-                'stops': [
-                    [12, 2],
-                    [22, 180]
-                ]
-            },
-            'circle-color': '#3de800'
-        }
-    });
-
-    map.addLayer({
-        'id': 'arrest',
-        'type': 'circle',
-        'source': {
-            type: 'vector',
-            url: 'mapbox://askakdagr8.1xjowwjl'
-        },
-        'source-layer': 'dfarrest-74359f',
-        'paint': {
-            // make circles larger as the user zooms from z12 to z22
-            'circle-radius': {
-                'base': 1.75,
-                'stops': [
-                    [12, 2],
-                    [22, 180]
-                ]
-            },
-            'circle-color': '#eaa22e'
-        }
-    });
-
-    map.addLayer({
-        'id': 'carprowl',
-        'type': 'circle',
-        'source': {
-            type: 'vector',
-            url: 'mapbox://askakdagr8.1zgedqin'
-        },
-        'source-layer': 'carprowl-9q8uqm',
-        'paint': {
-            // make circles larger as the user zooms from z12 to z22
-            'circle-radius': {
-                'base': 1.75,
-                'stops': [
-                    [12, 2],
-                    [22, 180]
-                ]
-            },
-            'circle-color': '#28ffc5'
-        }
-    });
-
-    map.setLayoutProperty("shoplifting", "visibility", "visible");
-    map.setLayoutProperty("robbery", "visibility", "none");
-    map.setLayoutProperty("prostitution", "visibility", "none");
-    map.setLayoutProperty("narcotics", "visibility", "none");
-    map.setLayoutProperty("burglary", "visibility", "none");
-    map.setLayoutProperty("autotheft", "visibility", "none");
-    map.setLayoutProperty("homicide", "visibility", "none");
-    map.setLayoutProperty("assault", "visibility", "none");
-    map.setLayoutProperty("arrest", "visibility", "none");
-    map.setLayoutProperty("carprowl", "visibility", "none");
+    map.setFilter('all', ['==', 'Event Clearance Group', 'SHOPLIFTING'])
+    map.setPaintProperty('all', 'circle-color', '#faafee');
 
     $("#crimeFilter").on('change', function(event) {
         crimeSelected = $('input[name=crime]:checked').val();
         console.log(crimeSelected);
         if (crimeSelected == "shoplifting") {
-            map.setLayoutProperty("shoplifting", "visibility", "visible");
-            map.setLayoutProperty("robbery", "visibility", "none");
-            map.setLayoutProperty("prostitution", "visibility", "none");
-            map.setLayoutProperty("narcotics", "visibility", "none");
-            map.setLayoutProperty("burglary", "visibility", "none");
-            map.setLayoutProperty("autotheft", "visibility", "none");
-            map.setLayoutProperty("homicide", "visibility", "none");
-            map.setLayoutProperty("assault", "visibility", "none");
-            map.setLayoutProperty("arrest", "visibility", "none");
-            map.setLayoutProperty("carprowl", "visibility", "none");
+            map.setFilter('all', ['==', 'Event Clearance Group', 'SHOPLIFTING']);
+            map.setPaintProperty('all', 'circle-color', '#faafee');
         }
         if (crimeSelected == "robbery") {
-            map.setLayoutProperty("shoplifting", "visibility", "none");
-            map.setLayoutProperty("robbery", "visibility", "visible");
-            map.setLayoutProperty("prostitution", "visibility", "none");
-            map.setLayoutProperty("narcotics", "visibility", "none");
-            map.setLayoutProperty("burglary", "visibility", "none");
-            map.setLayoutProperty("autotheft", "visibility", "none");
-            map.setLayoutProperty("homicide", "visibility", "none");
-            map.setLayoutProperty("assault", "visibility", "none");
-            map.setLayoutProperty("arrest", "visibility", "none");
-            map.setLayoutProperty("carprowl", "visibility", "none");
+            map.setFilter('all', ['==', 'Event Clearance Group', 'ROBBERY']);
+            map.setPaintProperty("all", "circle-color", "#f48341");
         }
         if (crimeSelected == "prostitution") {
-            map.setLayoutProperty("shoplifting", "visibility", "none");
-            map.setLayoutProperty("robbery", "visibility", "none");
-            map.setLayoutProperty("prostitution", "visibility", "visible");
-            map.setLayoutProperty("narcotics", "visibility", "none");
-            map.setLayoutProperty("burglary", "visibility", "none");
-            map.setLayoutProperty("autotheft", "visibility", "none");
-            map.setLayoutProperty("homicide", "visibility", "none");
-            map.setLayoutProperty("assault", "visibility", "none");
-            map.setLayoutProperty("arrest", "visibility", "none");
-            map.setLayoutProperty("carprowl", "visibility", "none");
+            map.setFilter('all', ['==', 'Event Clearance Group', 'PROSTITUTION'])
+            map.setPaintProperty("all", "circle-color", "#f4c141");
         }
         if (crimeSelected == "narcotics") {
-            map.setLayoutProperty("shoplifting", "visibility", "none");
-            map.setLayoutProperty("robbery", "visibility", "none");
-            map.setLayoutProperty("prostitution", "visibility", "none");
-            map.setLayoutProperty("narcotics", "visibility", "visible");
-            map.setLayoutProperty("burglary", "visibility", "none");
-            map.setLayoutProperty("autotheft", "visibility", "none");
-            map.setLayoutProperty("homicide", "visibility", "none");
-            map.setLayoutProperty("assault", "visibility", "none");
-            map.setLayoutProperty("arrest", "visibility", "none");
-            map.setLayoutProperty("carprowl", "visibility", "none");
+            map.setFilter('all', ['==', 'Event Clearance Group', 'NARCOTICS COMPLAINTS'])
+            map.setPaintProperty("all", "circle-color", "#e5f441");
         }
         if (crimeSelected == "burglary") {
-            map.setLayoutProperty("shoplifting", "visibility", "none");
-            map.setLayoutProperty("robbery", "visibility", "none");
-            map.setLayoutProperty("prostitution", "visibility", "none");
-            map.setLayoutProperty("narcotics", "visibility", "none");
-            map.setLayoutProperty("burglary", "visibility", "visible");
-            map.setLayoutProperty("autotheft", "visibility", "none");
-            map.setLayoutProperty("homicide", "visibility", "none");
-            map.setLayoutProperty("assault", "visibility", "none");
-            map.setLayoutProperty("arrest", "visibility", "none");
-            map.setLayoutProperty("carprowl", "visibility", "none");
+            map.setFilter('all', ['==', 'Event Clearance Group', 'BURGLARY'])
+            map.setPaintProperty("all", "circle-color", "#82f441");
         }
         if (crimeSelected == "autotheft") {
-            map.setLayoutProperty("shoplifting", "visibility", "none");
-            map.setLayoutProperty("robbery", "visibility", "none");
-            map.setLayoutProperty("prostitution", "visibility", "none");
-            map.setLayoutProperty("narcotics", "visibility", "none");
-            map.setLayoutProperty("burglary", "visibility", "none");
-            map.setLayoutProperty("autotheft", "visibility", "visible");
-            map.setLayoutProperty("homicide", "visibility", "none");
-            map.setLayoutProperty("assault", "visibility", "none");
-            map.setLayoutProperty("arrest", "visibility", "none");
-            map.setLayoutProperty("carprowl", "visibility", "none");
+            map.setFilter('all', ['==', 'Event Clearance Group', 'AUTO THEFTS'])
+            map.setPaintProperty("all", "circle-color", "#41f48b");
         }
         if (crimeSelected == "homicide") {
-            map.setLayoutProperty("shoplifting", "visibility", "none");
-            map.setLayoutProperty("robbery", "visibility", "none");
-            map.setLayoutProperty("prostitution", "visibility", "none");
-            map.setLayoutProperty("narcotics", "visibility", "none");
-            map.setLayoutProperty("burglary", "visibility", "none");
-            map.setLayoutProperty("autotheft", "visibility", "none");
-            map.setLayoutProperty("homicide", "visibility", "visible");
-            map.setLayoutProperty("assault", "visibility", "none");
-            map.setLayoutProperty("arrest", "visibility", "none");
-            map.setLayoutProperty("carprowl", "visibility", "none");
+            map.setFilter('all', ['==', 'Event Clearance Group', 'HOMICIDE'])
+            map.setPaintProperty("all", "circle-color", "#41f4d9");
         }
         if (crimeSelected == "assault") {
-            map.setLayoutProperty("shoplifting", "visibility", "none");
-            map.setLayoutProperty("robbery", "visibility", "none");
-            map.setLayoutProperty("prostitution", "visibility", "none");
-            map.setLayoutProperty("narcotics", "visibility", "none");
-            map.setLayoutProperty("burglary", "visibility", "none");
-            map.setLayoutProperty("autotheft", "visibility", "none");
-            map.setLayoutProperty("homicide", "visibility", "none");
-            map.setLayoutProperty("assault", "visibility", "visible");
-            map.setLayoutProperty("arrest", "visibility", "none");
-            map.setLayoutProperty("carprowl", "visibility", "none");
+            map.setFilter('all', ['==', 'Event Clearance Group', 'ASSAULTS'])
+            map.setPaintProperty("all", "circle-color", "#42b6ff");
         }
         if (crimeSelected == "arrest") {
-            map.setLayoutProperty("shoplifting", "visibility", "none");
-            map.setLayoutProperty("robbery", "visibility", "none");
-            map.setLayoutProperty("prostitution", "visibility", "none");
-            map.setLayoutProperty("narcotics", "visibility", "none");
-            map.setLayoutProperty("burglary", "visibility", "none");
-            map.setLayoutProperty("autotheft", "visibility", "none");
-            map.setLayoutProperty("homicide", "visibility", "none");
-            map.setLayoutProperty("assault", "visibility", "none");
-            map.setLayoutProperty("arrest", "visibility", "visible");
-            map.setLayoutProperty("carprowl", "visibility", "none");
+            map.setFilter('all', ['==', 'Event Clearance Group', 'ARREST'])
+            map.setPaintProperty("all", "circle-color", "#4151ff");
         }
         if (crimeSelected == "carprowl") {
-            map.setLayoutProperty("shoplifting", "visibility", "none");
-            map.setLayoutProperty("robbery", "visibility", "none");
-            map.setLayoutProperty("prostitution", "visibility", "none");
-            map.setLayoutProperty("narcotics", "visibility", "none");
-            map.setLayoutProperty("burglary", "visibility", "none");
-            map.setLayoutProperty("autotheft", "visibility", "none");
-            map.setLayoutProperty("homicide", "visibility", "none");
-            map.setLayoutProperty("assault", "visibility", "none");
-            map.setLayoutProperty("arrest", "visibility", "none");
-            map.setLayoutProperty("carprowl", "visibility", "visible");
-        }
-        if (crimeSelected == "all") {
-            map.setLayoutProperty("shoplifting", "visibility", "visible");
-            map.setLayoutProperty("robbery", "visibility", "visible");
-            map.setLayoutProperty("prostitution", "visibility", "visible");
-            map.setLayoutProperty("narcotics", "visibility", "visible");
-            map.setLayoutProperty("burglary", "visibility", "visible");
-            map.setLayoutProperty("autotheft", "visibility", "visible");
-            map.setLayoutProperty("homicide", "visibility", "visible");
-            map.setLayoutProperty("assault", "visibility", "visible");
-            map.setLayoutProperty("arrest", "visibility", "visible");
-            map.setLayoutProperty("carprowl", "visibility", "visible");
+            map.setFilter('all', ['==', 'Event Clearance Group', 'CAR PROWL'])
+            map.setPaintProperty("all", "circle-color", "#a43dff");
         }
 
     });
+
+
+    $("#year").on('change', function(event) {
+        var year = $('#year').val();
+        console.log(year);
+
+        if (year == "2009") {
+            var previousFilter = map.getFilter('all');
+            var columns = previousFilter[1];
+            var critera = previousFilter[2];
+            map.setFilter('all', ['==', 'Year', 2009]&&['==', columns, critera])
+            // map.setFilter('all',previousFilter)
+            $("#yearAppend").text("2009")
+        }
+        if (year == "2010") {
+            var previousFilter = map.getFilter('all');
+            var columns = previousFilter[1];
+            var critera = previousFilter[2];
+            map.setFilter('all', ['==', 'Year', 2010]&&['==', columns, critera])
+            // map.setFilter('all',previousFilter)
+            $("#yearAppend").text("2010")
+        }
+        if (year == "2011") {
+            var previousFilter = map.getFilter('all');
+            var columns = previousFilter[1];
+            var critera = previousFilter[2];
+            map.setFilter('all', ['==', 'Year', 2011]&&['==', columns, critera])
+
+            // map.setFilter('all',previousFilter)
+            $("#yearAppend").text("2011")
+        }
+
+        if (year == "2012") {
+            var previousFilter = map.getFilter('all');
+            var columns = previousFilter[1];
+            var critera = previousFilter[2];
+            map.setFilter('all', ['==', 'Year', 2012]&&['==', columns, critera])
+            // map.setFilter('all',previousFilter)
+            $("#yearAppend").text("2012")
+        }
+        if (year == "2013") {
+            var previousFilter = map.getFilter('all');
+            var columns = previousFilter[1];
+            var critera = previousFilter[2];
+            map.setFilter('all', ['==', 'Year', 2013]&&['==', columns, critera])
+            // map.setFilter('all',previousFilter)
+            $("#yearAppend").text("2013")
+        }
+        if (year == "2014") {
+            var previousFilter = map.getFilter('all');
+            var columns = previousFilter[1];
+            var critera = previousFilter[2];
+            map.setFilter('all', ['==', 'Year', 2014]&&['==', columns, critera])
+            // map.setFilter('all',previousFilter)
+            $("#yearAppend").text("2014")
+        }
+        if (year == "2015") {
+            var previousFilter = map.getFilter('all');
+            var columns = previousFilter[1];
+            var critera = previousFilter[2];
+            map.setFilter('all', ['==', 'Year', 2015]&&['==', columns, critera])
+            // map.setFilter('all',previousFilter)
+            $("#yearAppend").text("2015")
+        }
+        if (year == "2016") {
+            var previousFilter = map.getFilter('all');
+            var columns = previousFilter[1];
+            var critera = previousFilter[2];
+            map.setFilter('all', ['==', 'Year', 2016]&&['==', columns, critera])
+            // map.setFilter('all',previousFilter)
+            $("#yearAppend").text("2016")
+        }
+        if (year == "2017") {
+            var previousFilter = map.getFilter('all');
+            var columns = previousFilter[1];
+            var critera = previousFilter[2];
+            map.setFilter('all', ['==', 'Year', 2017]&&['==', columns, critera])
+            // map.setFilter('all',previousFilter)
+            $("#yearAppend").text("2017")
+        }
+        
+
+    })
+
+    $("#month").on('change', function(event) {
+        var month = $('#month').val();
+        console.log(month);
+
+        if (month == "1") {
+            console.log("Entered")
+            map.setFilter('all', ['==', 'Month', 1])
+            $("#monthAppend").text("January")
+        }
+        if (month == "2") {
+            console.log("Entered")
+            map.setFilter('all', ['==', 'Month', 2])
+            $("#monthAppend").text("February")
+        }
+        if (month == "3") {
+            console.log("Entered")
+            map.setFilter('all', ['==', 'Month', 3])
+            $("#monthAppend").text("March")
+        }
+        if (month == "4") {
+            console.log("Entered")
+            map.setFilter('all', ['==', 'Month', 4])
+            $("#monthAppend").text("April")
+        }
+        if (month == "5") {
+            console.log("Entered")
+            map.setFilter('all', ['==', 'Month', 5])
+            $("#monthAppend").text("May")
+        }
+        if (month == "6") {
+            console.log("Entered")
+            map.setFilter('all', ['==', 'Month', 6])
+            $("#monthAppend").text("June")
+        }
+        if (month == "7") {
+            console.log("Entered")
+            map.setFilter('all', ['==', 'Month', 7])
+            $("#monthAppend").text("July")
+        }
+        if (month == "8") {
+            console.log("Entered")
+            map.setFilter('all', ['==', 'Month', 8])
+            $("#monthAppend").text("August")
+        }
+        if (month == "9") {
+            console.log("Entered")
+            map.setFilter('all', ['==', 'Month', 9])
+            $("#monthAppend").text("September")
+        }
+        if (month == "10") {
+            console.log("Entered")
+            map.setFilter('all', ['==', 'Month', 10])
+            $("#monthAppend").text("October")
+        }
+        if (month == "11") {
+            console.log("Entered")
+            map.setFilter('all', ['==', 'Month', 11])
+            $("#monthAppend").text("November")
+        }
+        if (month == "12") {
+            console.log("Entered")
+            map.setFilter('all', ['==', 'Month', 12])
+            $("#monthAppend").text("December")
+        }
+    })
+
+    $("#layerButton").on("click", function(event) {
+        console.log(map.getFilter("all"));
+    })
 
 
 
