@@ -9,7 +9,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYXNrYWtkYWdyOCIsImEiOiJjamgzbW04MmowNTJlMndue
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
-    maxZoom: 15,
+    // maxZoom: 15,
     minZoom: 12,
     pitch: 60.0,
     bearing: 20.35,
@@ -31,6 +31,16 @@ var layerObj = {
 map.on('load', function() {
     console.log('Map Display ' + crimeSelected);
 
+    var layers = map.getStyle().layers;
+
+    var labelLayerId;
+    for (var i = 0; i < layers.length; i++) {
+        if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
+            labelLayerId = layers[i].id;
+            break;
+        }
+    }
+
     map.addLayer({
         'id': '3d-buildings',
         'source': 'composite',
@@ -39,13 +49,21 @@ map.on('load', function() {
         'type': 'fill-extrusion',
         'minzoom': 15,
         'paint': {
-            "fill-extrusion-opacity": 0.8,
             'fill-extrusion-color': '#aaa',
-            "fill-extrusion-height": 500,
-            "fill-extrusion-height-transition": {
-                duration: 500,
-                delay: 0
-            },
+
+            // use an 'interpolate' expression to add a smooth transition effect to the
+            // buildings as the user zooms in
+            'fill-extrusion-height': [
+                "interpolate", ["linear"], ["zoom"],
+                15, 0,
+                15.05, ["get", "height"]
+            ],
+            'fill-extrusion-base': [
+                "interpolate", ["linear"], ["zoom"],
+                15, 0,
+                15.05, ["get", "min_height"]
+            ],
+            'fill-extrusion-opacity': .6
         }
     });
 
