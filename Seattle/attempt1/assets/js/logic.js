@@ -9,7 +9,10 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYXNrYWtkYWdyOCIsImEiOiJjamgzbW04MmowNTJlMndue
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
-    zoom: 12,
+    maxZoom: 15,
+    minZoom: 12,
+    pitch: 60.0,
+    bearing: 20.35,
     center: [-122.343161, 47.611673]
 });
 
@@ -69,9 +72,10 @@ map.on('load', function() {
 
     // map.setFilter('total', ['==', 'Event Clearance Group', 'SHOPLIFTING'])
     map.setFilter('total', [
-            "all", ['==', 'Event Clearance Group', 'SHOPLIFTING'],
-            ["==", "Year", 2010], ["==", "Month", 1]
-        ])
+        "all", ['==', 'Event Clearance Group', 'SHOPLIFTING'],
+        ["==", "Year", 2010],
+        ["==", "Month", 1]
+    ])
     map.setPaintProperty('total', 'circle-color', '#faafee');
 
     function setfilter(array1, array2, array3) {
@@ -85,43 +89,43 @@ map.on('load', function() {
         crimeSelected = $('input[name=crime]:checked').val();
         console.log(crimeSelected);
         if (crimeSelected == "SHOPLIFTING") {
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             map.setPaintProperty('total', 'circle-color', '#faafee');
         }
         if (crimeSelected == "ROBBERY") {
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             map.setPaintProperty("total", "circle-color", "#f48341");
         }
         if (crimeSelected == "PROSTITUTION") {
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             map.setPaintProperty("total", "circle-color", "#f4c141");
         }
         if (crimeSelected == "NARCOTICS COMPLAINTS") {
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             map.setPaintProperty("total", "circle-color", "#e5f441");
         }
         if (crimeSelected == "BURGLARY") {
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             map.setPaintProperty("total", "circle-color", "#82f441");
         }
         if (crimeSelected == "AUTO THEFTS") {
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             map.setPaintProperty("total", "circle-color", "#41f48b");
         }
         if (crimeSelected == "HOMICIDE") {
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             map.setPaintProperty("total", "circle-color", "#41f4d9");
         }
         if (crimeSelected == "ASSAULTS") {
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             map.setPaintProperty("total", "circle-color", "#42b6ff");
         }
         if (crimeSelected == "ARREST") {
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             map.setPaintProperty("total", "circle-color", "#4151ff");
         }
         if (crimeSelected == "CAR PROWL") {
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             map.setPaintProperty("total", "circle-color", "#a43dff");
         }
 
@@ -139,7 +143,7 @@ map.on('load', function() {
             var previousFilter = map.getFilter('total');
             var columns = previousFilter[1];
             var critera = previousFilter[2];
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             // map.setFilter('total',previousFilter)
             $("#yearAppend").text("2009")
         }
@@ -148,7 +152,7 @@ map.on('load', function() {
             var previousFilter = map.getFilter('total');
             var columns = previousFilter[1];
             var critera = previousFilter[2];
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             // map.setFilter('total',previousFilter)
             $("#yearAppend").text("2010")
         }
@@ -159,7 +163,7 @@ map.on('load', function() {
             var columns = previousFilter[1];
             var critera = previousFilter[2];
             console.log(previousFilter);
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             // setfilter(columns,critera)
             // map.setFilter('total',previousFilter)
             $("#yearAppend").text("2011")
@@ -170,7 +174,7 @@ map.on('load', function() {
             var columns = previousFilter[1];
             var critera = previousFilter[2];
             console.log(previousFilter);
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             // setfilter(columns,critera)
             $("#yearAppend").text("2012")
         }
@@ -179,7 +183,7 @@ map.on('load', function() {
             var previousFilter = map.getFilter('total');
             var columns = previousFilter[1];
             var critera = previousFilter[2];
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             // map.setFilter('total',previousFilter)
             $("#yearAppend").text("2013")
         }
@@ -188,7 +192,7 @@ map.on('load', function() {
             var previousFilter = map.getFilter('total');
             var columns = previousFilter[1];
             var critera = previousFilter[2];
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             // map.setFilter('total',previousFilter)
             $("#yearAppend").text("2014")
         }
@@ -197,7 +201,7 @@ map.on('load', function() {
             var previousFilter = map.getFilter('total');
             var columns = previousFilter[1];
             var critera = previousFilter[2];
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             // map.setFilter('total',previousFilter)
             $("#yearAppend").text("2015")
         }
@@ -206,7 +210,7 @@ map.on('load', function() {
             var previousFilter = map.getFilter('total');
             var columns = previousFilter[1];
             var critera = previousFilter[2];
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             // map.setFilter('total',previousFilter)
             $("#yearAppend").text("2016")
         }
@@ -215,7 +219,7 @@ map.on('load', function() {
             var previousFilter = map.getFilter('total');
             var columns = previousFilter[1];
             var critera = previousFilter[2];
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected])
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected])
             // map.setFilter('total',previousFilter)
             $("#yearAppend").text("2017")
         }
@@ -231,62 +235,62 @@ map.on('load', function() {
 
         if (month == "1") {
             monthSelected = 1;
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected]);
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected]);
             $("#monthAppend").text("January")
         }
         if (month == "2") {
             monthSelected = 2;
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected]);
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected]);
             $("#monthAppend").text("February")
         }
         if (month == "3") {
             monthSelected = 3;
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected]);
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected]);
             $("#monthAppend").text("March")
         }
         if (month == "4") {
             monthSelected = 4;
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected]);
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected]);
             $("#monthAppend").text("April")
         }
         if (month == "5") {
             monthSelected = 5;
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected]);
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected]);
             $("#monthAppend").text("May")
         }
         if (month == "6") {
             monthSelected = 6;
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected]);
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected]);
             $("#monthAppend").text("June")
         }
         if (month == "7") {
             monthSelected = 7;
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected]);
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected]);
             $("#monthAppend").text("July")
         }
         if (month == "8") {
             monthSelected = 8;
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected]);
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected]);
             $("#monthAppend").text("August")
         }
         if (month == "9") {
             monthSelected = 9;
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected]);
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected]);
             $("#monthAppend").text("September")
         }
         if (month == "10") {
             monthSelected = 10;
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected]);
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected]);
             $("#monthAppend").text("October")
         }
         if (month == "11") {
             monthSelected = 11;
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected]);
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected]);
             $("#monthAppend").text("November")
         }
         if (month == "12") {
             monthSelected = 12;
-            setfilter(["==","Event Clearance Group",crimeSelected], ["==", "Year", yearSelected],["==", "Month", monthSelected]);
+            setfilter(["==", "Event Clearance Group", crimeSelected], ["==", "Year", yearSelected], ["==", "Month", monthSelected]);
             $("#monthAppend").text("December")
         }
     })
