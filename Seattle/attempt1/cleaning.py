@@ -6,14 +6,12 @@ Created on Tue May 22 14:28:36 2018
 """
 
 import pandas as pd
-import seaborn as sns
+import numpy as np
 
 df = pd.read_csv(r"C:\Users\AK\Desktop\52WeeksOfDataScience\Seattle\Data\seattle.csv", engine='python')
 df.head()
 
-df.columns
-
-df = df[['Longitude','Latitude','Event Clearance Group','Event Clearance Date']]
+#df = df[['Longitude','Latitude','Event Clearance Group','Event Clearance Date']]
 
 df['Event Clearance Group'].value_counts()
 
@@ -30,7 +28,26 @@ df['Month'] = df['Event Clearance Date'].dt.month
 df['Hour'] = df['Event Clearance Date'].dt.hour
 df['Year'] = df['Event Clearance Date'].dt.year
 
+#df = df.groupby(['Zone/Beat','Event Clearance Group','Day of Week','Month']).count()
+#df = df.reset_index()
+
+step = 0.001
+to_bin = lambda x: np.floor(x / step) * step
+df["latbin"] = df.Latitude.map(to_bin)
+df["lonbin"] = df.Longitude.map(to_bin)
+
+
+dfGrouped = df.groupby(['latbin','lonbin','Event Clearance Group','Day of Week','Month']).count()
+dfGrouped = dfGrouped.reset_index()
+dfGrouped = dfGrouped[['latbin', 'lonbin', 'Event Clearance Group', 'Day of Week', 'Month','index']]
+dfGrouped.columns = ['Latitude','Longitude','Event Clearance Group', 'Day of Week', 'Month','Frequency']
 
 
 
-df.to_csv(r"C:\Users\AK\Desktop\52WeeksOfDataScience\Seattle\Data\output.csv")
+
+
+
+dfGrouped.drop('Unnamed: 0',axis=1,inplace=True)
+dfGrouped = pd.read_csv(r"C:\Users\AK\Desktop\52WeeksOfDataScience\Seattle\Data\GroupedOutput.csv")
+
+dfGrouped.to_csv(r"C:\Users\AK\Desktop\52WeeksOfDataScience\Seattle\Data\GroupedOutput.csv", encoding="utf-8")
