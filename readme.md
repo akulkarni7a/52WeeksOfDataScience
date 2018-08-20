@@ -3,7 +3,7 @@
 
 
 Week | Title | Github Link | Write Up Link 
---- | --- | ---
+--- | --- | --- | ---
 1 | Can we predict how the stock market will react to today's headlines? | [Week 1 Code](https://github.com/askakdagr8/52WeeksOfDataScience/tree/master/Week%201) | [Week 1 Write Up](https://www.linkedin.com/feed/update/urn:li:activity:6386757091968770048)
 2 | Can we predict what sort of tweets a NBA player gets? | [Week 2 Code](https://github.com/askakdagr8/52WeeksOfDataScience/tree/master/Week%202) | [Week 2 Write Up](https://www.linkedin.com/pulse/predicting-tweets-nba-players-get-anirudh-kulkarni/)
 3 | Harry Potter by AI Rowling | [Week 3 Code](https://github.com/sherjilozair/char-rnn-tensorflow) | [Week 3 Write Up](https://www.linkedin.com/pulse/harry-potter-ai-rowling-anirudh-kulkarni/)
