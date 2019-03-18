@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>Points on a map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div style="background-color: #1c1c1c; width: 400px; height: auto; z-index: 2; position: absolute; margin-left: 30px; margin-top: 30px; opacity: .6; color: white; text-align: center; font-family: 'Lato', sans-serif;">
+    	<div id="title" style="font-size: 20px; margin-top: 20px;"></div>
+    	<br>
+    	<div id="text" style="font-size: 14px; text-align: left; line-height: 20px; padding-left: 10px; padding-right: 10px;"></div>
+    	<br>
+    	<br>
+        <div style="text-align: center;">
+            <button id="backBtn"><</button> 
+            <button id="nextBtn">></button>
+        </div>
+    </div>
+    <div id='map' style="z-index: 1;"></div>
+    <script type="text/javascript" src="ca_pop_2.js"></script>
+</body>
+
+</html>
