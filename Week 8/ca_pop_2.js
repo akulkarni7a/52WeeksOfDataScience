@@ -14,10 +14,10 @@ var start_viz = {
 		    <i>“It’d be the best of both worlds,”</i> I thought. 
 		    <br>
 		    <br>
-		    That was until I discovered that the one way commute would range from an hour and a half to two hours.
+		    I quickly changed my mind when I discovered that the one way commute would range from an hour and a half to two hours.
 		    <br>
 		    <br>
-		    Still, I know so many folks that made that tradeoff to live in the city. It got me thinking of of a visualization I saw about a year ago.
+		    Still, I know so many folks that willingly made that tradeoff. It got me thinking of of a visualization I saw about a year ago.
 			</div>`
     },
     1: {
@@ -82,6 +82,9 @@ var start_viz = {
         title: 'San Francisco State University',
         text:`<div>
         	Large spikes such as this one often suggest university dorm rooms.
+            <br>
+            <br>
+            This, for example, is the San Francisco State University.
         	</div>
         `
     },
@@ -92,7 +95,7 @@ var start_viz = {
         pitch: 60.00,
         title: 'San Quentin State Prison',
         text:`<div>
-        	... or even prisons.
+            Other large spikes could indicate a prison.
        	</div>
         `
     },
